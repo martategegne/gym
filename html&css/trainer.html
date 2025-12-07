@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Marta Tegegne Mamo">
+  <!-- project description to enhance SEO -->
+  <meta name="description" content="Transform your body and join the best gym in town. State-of-the-art equipment and expert trainers available.">
+  <title>trainer|Queen Marta Fitness</title>
+  <!-- my favicon goes here -->
+  <link rel="icon" href="images/favi.ico" type="image/x-icon">
+  <!-- my external styling link goes here -->
+  <link rel="stylesheet" href="purged-css/trainer.css">
+  <!-- fontaawesome link for importing social media icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body >
+  <!-- header -->
+   <header role="banner">
+    
+<nav class="main-nav"> 
+  <img src="images/logo1.ico" alt="Queen Marta Fitness Global Fitness Home">
+<!-- links to different pages of my web page go here -->
+            <ul>
+              <li><a href="home.html">home</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="program.html">Program</a></li>
+                <li><a href="trainer.html">Trainer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+   </header>
+   
+   <!-- main -->
+    <main>
+       <h1>Meet Our Expert Trainers</h1>
+        
+        <!-- Trainer profiles with microdata -->
+        <section id="trainer-profiles" itemscope itemtype="https://schema.org/Person">
+            <article itemprop="employee" itemscope itemtype="https://schema.org/Person">
+                <h2 itemprop="name">Sarah Johnson</h2>
+                <figure>
+                    <img src="images/11.jpg" alt="Sarah Johnson - Personal Trainer" 
+                         width="200"  itemprop="image" >
+                    <figcaption itemprop="jobTitle">Personal Trainer</figcaption>
+                </figure>
+                <p itemprop="description">With over 10 years of experience, Sarah has helped hundreds of clients.</p>
+                
+                <div itemprop="knowsAbout" itemscope itemtype="https://schema.org/Thing">
+                    <h3>Specialties:</h3>
+                    <ul>
+                        <li itemprop="name">Weight Management</li>
+                        <li itemprop="name">Postnatal Fitness</li>
+                        <li itemprop="name">Functional Training</li>
+                    </ul>
+                </div>
+
+                <!-- Contact using semantic markup -->
+                <div itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+                    <p>Email: <span itemprop="email">sarah@queenmartagym.com</span></p>
+                    <p>Available: <time itemprop="hoursAvailable" datetime="Mo,Tu,We,Th,Fr 09:00-17:00">Weekdays 9AM-5PM</time></p>
+                </div>
+            </article>
+        </section>
+
+        <!-- HTML5 Video with multiple sources -->
+        <section id="trainer-videos">
+            <h2>Trainer in Action</h2>
+            <video width="400" controls muted autoplay loop>
+    <source src="images/4671964-hd_1920_1080_25fps.mp4" type="video/mp4">
+    <track src="subtiles/exercise.vtt" kind="subtitles" 
+    srclang="en" 
+    label="English"
+    default
+    mode="showing" > 
+    Your browser does not support the video tag.
+</video>
+               
+        
+        </section>
+
+        <!-- SSE (Server-Sent Events) Demo -->
+        <section id="live-sessions">
+            <h2>Live Training Sessions</h2>
+            <div id="session-updates">
+                <p>Waiting for live session updates...</p>
+            </div>
+            <button onclick="startLiveUpdates()">Start Live Updates</button>
+        </section>
+
+        <!-- Advanced Booking System -->
+        <section id="advanced-booking">
+            <h2>Advanced Session Booking</h2>
+            
+            <!-- Date and time with constraints -->
+            <form id="advanced-booking-form">
+                <div>
+                    <label for="session-date">Session Date:</label>
+                    <input type="date" id="session-date" name="session-date" 
+                           min="2024-01-01" max="2024-12-31" required>
+                </div>
+
+                <div>
+                    <label for="session-datetime">Or specific date/time:</label>
+                    <input type="datetime-local" id="session-datetime" name="session-datetime">
+                </div>
+
+                <div>
+                    <label for="session-week">Select week:</label>
+                    <input type="date" id="session-week" name="session-week">
+                </div>
+
+                <div>
+                    <label for="session-month">Select month:</label>
+                    <input type="date" id="session-month" name="session-month">
+                </div>
+
+                <!-- Color coding for session types -->
+                <div>
+                    <label for="session-type-color">Session Type Color:</label>
+                    <input type="color" id="session-type-color" name="session-type-color" 
+                           list="color-suggestions">
+                    <datalist id="color-suggestions">
+                        <option value="#ff0000">Intense</option>
+                        <option value="#00ff00">Beginner</option>
+                        <option value="#0000ff">Recovery</option>
+                    </datalist>
+                </div>
+
+                <!-- File upload for health documents -->
+                <div>
+                    <label for="health-doc">Upload Health Certificate (optional):</label>
+                    <input type="file" id="health-doc" name="health-doc" 
+                           accept=".pdf,.jpg,.png" multiple>
+                </div>
+
+                <button type="submit">Book Advanced Session</button>
+            </form>
+        </section>
+
+        <!-- Trainer availability calendar -->
+        <section id="availability">
+            <h2>Trainer Availability</h2>
+            <div id="calendar-container">
+                <!-- Calendar would be implemented with JavaScript -->
+                <p>Interactive calendar showing trainer availability</p>
+            </div>
+        </section>
+        </main>
+   <!-- the footer -->
+    <footer role="contentinfo">
+      <nav>
+        <ul>
+       <li> <a href="home.html">home</a></li>
+       <li> <a href="contact.html">contacts</a></li>
+       <li> <a href="program.html">programs</a></li>
+       <li> <a href="membership.html">Membership</a></li>
+        <li><a href="trainer.html">Meet trainers</a></li>
+        </ul>
+      </nav>
+      <br>
+      <h3>Follow Us On</h3>
+      <br>
+      <section class="social-icons">
+    <a id="instagram" href="https://instagram.com" target="_blank"  rel="noopener"><i class="fab fa-instagram"></i>instagram</a>
+    <a id="Telegram" href="https://t.me" target="_blank"  rel="noopener"><i class="fab fa-telegram"></i>Telegram</a>
+    <a id="facebook" href="https://facebook.com" target="_blank"  rel="noopener"><i class="fab fa-facebook"></i>Facebook</a>
+    <a id="twitter" href="https://twitter.com" target="_blank"  rel="noopener"><i class="fab fa-twitter"></i>Twitter</a>
+    <a id="youtube" href="https://youtube.com" target="_blank"  rel="noopener"><i class="fab fa-youtube"></i>youtube</a>
+    <a id="WhatsApp" href="https://wa.me" target="_blank"  rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    <a id="emai" href="mailto:example@email.com"  rel="noopener"><i class="fas fa-envelope"></i>Email</a>
+    <a id="tiktok" href="https://tiktok.com" target="_blank" rel="noopener"><i class="fab fa-tiktok" ></i>tiktok</a>
+  </section>
+
+
+      <br>
+      
+        <p>&copy; Marta Tegegne Nov 26,2025. All rights reserved.</p>
+        <address>
+            5 kilo Queen Marta Fitness Street, Addis Ababa Cit,Arda Subcity
+        </address>
+        <!-- HTML Symbols -->
+        <p>Contact: 📞 (+251)9-802-174-90  ✉️ martategegne2015@gmail.com</p>
+  
+    </footer>
+</body>
+</html>
