@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Marta Tegegne Mamo">
+  <!-- project description to enhance SEO -->
+  <meta name="description" content="Transform your body and join the best gym in town. State-of-the-art equipment and expert trainers available.">
+  <title>contact|Queen Marta Fitness</title>
+  <!-- my favicon goes here -->
+   <link rel="icon" href="images/favi.ico" type="image/x-icon">
+   <!-- link to external styling -->
+    <link rel="stylesheet" href="purged-css/contact.css">
+    <!-- fontawesome link for importing social media icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body >
+  <!-- the header goes here -->
+  <header role="banner">
+<img src="images/logo1.ico" alt="our gym logo" width="200px" loading="lazy" >
+<!-- links to different pages of my web page -->
+ <nav>
+  <ul role="menubar">
+  <li role="menuitem"><a href="home.html">Home</a></li>
+ <li role="menuitem"> <a href="contact.html">Contact Us</a></li>
+ <li role="menuitem"> <a href="membership.html">Membership</a></li>
+   <li role="menuitem"> <a href="program.html">Programs</a></li>
+  <li role="menuitem"><a href="trainer.html">Meet Trainers</a></li>
+  </ul>
+</nav>
+  </header>
+  <!-- the main goes here -->
+   <main role="main">
+
+<!-- Contact information with microdata -->
+        <section id="contact-info" itemscope itemtype="https://schema.org/SportsActivityLocation">
+            <h2>Get In Touch</h2>
+            <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <p><strong>Address:</strong> 
+                    <span itemprop="streetAddress">Queen Marta Fitnes Street</span>, 
+                    <span itemprop="addressLocality">Addis Ababa city</span>, 
+                    <span itemprop="addressRegion">5 kilo</span> 
+                    <span itemprop="postalCode">1000</span>
+                </p>
+                <p><strong>Phone:</strong> 
+                    <a href="tel:+251551234567" itemprop="telephone">(+251)9 802-174-90</a>
+                </p>
+                <p><strong>Email:</strong> 
+                    <a href="mailto:info@powerfitgym.com" itemprop="email">martategegne2015@gmail.com</a>
+                </p>
+            </address>
+
+            <!-- Opening hours with semantic markup -->
+            <div itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
+                <h3>Hours of Operation</h3>
+                <table>
+                    <tr>
+                        <td itemprop="dayOfWeek" content="https://schema.org/Monday">Monday - Friday</td>
+                        <td><time itemprop="opens" content="05:00:00">5:00 AM</time> - 
+                            <time itemprop="closes" content="23:00:00">11:00 PM</time></td>
+                    </tr>
+                    <tr>
+                        <td itemprop="dayOfWeek" content="https://schema.org/Saturday">Saturday</td>
+                        <td><time itemprop="opens" content="06:00:00">6:00 AM</time> - 
+                            <time itemprop="closes" content="22:00:00">10:00 PM</time></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact-form" aria-labelledby="form-heading">
+            <h2 id="form-heading">Send Us a Message</h2>
+            
+            <form id="enhanced-contact-form" onsubmit="handleContactSubmit(event)">
+                <div>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required
+                           autocomplete="name" aria-required="true">
+                </div>
+
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required
+                           autocomplete="email" aria-required="true">
+                </div>
+
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" 
+                           autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                </div>
+
+                <div>
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="membership">Membership Inquiry</option>
+                        <option value="training">Personal Training</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="urgency">Urgency:</label>
+                    <select id="urgency" name="urgency">
+                        <option value="low">Low</option>
+                        <option value="normal" selected>Normal</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="6" required 
+                              aria-required="true" 
+                              placeholder="Please type your message here..."
+                              maxlength="1000"></textarea>
+                    <div id="char-count">1000 characters remaining</div>
+                </div>
+
+                <!-- Hidden fields -->
+                 <!-- The purpose of including these hidden fields
+                   is to automatically collect useful metadata about the user and 
+                   their environment whenthey submit the form.
+                    Here's why each one is valuable: -->
+                <input type="hidden" id="timezone" name="timezone">
+                <input type="hidden" id="user-agent" name="user_agent">
+
+                <!-- Multiple file upload -->
+                <div>
+                    <label for="attachments">Attachments (optional):</label>
+                    <input type="file" id="attachments" name="attachments" 
+                           multiple accept=".jpg,.png,.pdf,.doc,.docx">
+                    <small>Maximum 3 files, 5MB each</small>
+                </div>
+
+                <!-- CAPTCHA alternative -->
+                <div>
+                    <label for="human-check">Are you human? What is 7 + 3?</label>
+                    <input type="text" id="human-check" name="human_check" 
+                           pattern="10" title="Please enter the correct sum">
+                </div>
+<!-- this attched document was attched to exercise download a document on website -->
+                <div>
+                    <label for="consent">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        I agree to the <a href="images/privcypolicy.docx" target="_blank">privacy policy</a>
+                    </label>
+                </div>
+
+                <button type="submit">Send Message</button>
+                <button type="reset">Clear Form</button>
+
+                <!-- Form status messages -->
+                <div id="form-status" role="alert" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <!-- Interactive Map with Canvas -->
+        <section id="interactive-map">
+            <h2>Find Us</h2>
+            
+          <!-- Fallback content -->
+                <p>Our gym is located Queen Marta Fitness Street, Addis Ababa City.</p>
+                <!-- the map goes here -->
+                <iframe class="map" src="https://www.google.com/maps/embed?..." 
+  title="Queen Marta Fitness location on Google Maps"
+  loading="lazy"
+  allowfullscreen >
+</iframe>
+            
+<p>Click on the map to see nearby landmarks</p>
+        </section>
+        <!-- canva exercise -->
+<section class="canva">
+
+</section>
+        <!-- Social media with SVG icons -->
+        <section id="social-media">
+            <h2>Follow Us</h2>
+            <div >
+                <a  rel="noopener" href="https://facebook.com/QueenMartaGym" aria-label="Facebook"  target="_blank">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="blue">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Facebook
+                </a>
+                <!-- More social media icons -->
+            </div>
+        </section>
+
+        <!-- Live chat widget -->
+        <section id="live-chat">
+            <h2>Live Chat</h2>
+            <button onclick="openChat()" aria-expanded="false" aria-controls="chat-window">
+                Start Live Chat
+            </button>
+            <div id="chat-window" hidden >
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button onclick="sendChatMessage()">Send</button>
+            </div>
+        </section>
+
+   </main>
+   
+ <!-- the footer -->
+    <footer role="contentinfo">
+      <nav>
+        <ul>
+       <li> <a href="home.html">home</a></li>
+       <li> <a href="contact.html">contacts</a></li>
+       <li> <a href="program.html">programs</a></li>
+       <li> <a href="membership.html">Membership</a></li>
+        <li><a href="trainer.html">Meet trainers</a></li>
+        </ul>
+      </nav>
+      <br>
+      <h3>Follow Us On</h3>
+      <br>
+      <section class="social-icons">
+    <a id="instagram" href="https://instagram.com" target="_blank"  rel="noopener"><i class="fab fa-instagram"></i>instagram</a>
+    <a id="Telegram" href="https://t.me" target="_blank"  rel="noopener"><i class="fab fa-telegram"></i>Telegram</a>
+    <a id="facebook" href="https://facebook.com" target="_blank"  rel="noopener"><i class="fab fa-facebook"></i>Facebook</a>
+    <a id="twitter" href="https://twitter.com" target="_blank"  rel="noopener"><i class="fab fa-twitter"></i>Twitter</a>
+    <a id="youtube" href="https://youtube.com" target="_blank"  rel="noopener"><i class="fab fa-youtube"></i>youtube</a>
+    <a id="WhatsApp" href="https://wa.me" target="_blank"  rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    <a id="emai" href="mailto:example@email.com"  rel="noopener"><i class="fas fa-envelope"></i>Email</a>
+    <a id="tiktok" href="https://tiktok.com" target="_blank" rel="noopener"><i class="fab fa-tiktok" ></i>tiktok</a>
+  </section>
+
+
+      <br>
+        <p>&copy; Marta Tegegne Nov 26,2025. All rights reserved.</p>
+        <address >
+            5 kilo Queen Marta Fitness Street, Addis Ababa Cit,Arda Subcity
+        </address>
+        <!-- HTML Symbols -->
+        <p>Contact: 📞 (+251)9-802-174-90  ✉️ martategegne2015@gmail.com</p>
+    </footer>
+
+</body>
+</html>
