@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Marta Tegegne Mamo">
+  <!-- project description to enhance SEO -->
+  <meta name="description" content="Transform your body and join the best gym in town. State-of-the-art equipment and expert trainers available.">
+  <title>membership|Queen Marta Fitness</title>
+  <!-- my favicon goes here -->
+  <link rel="icon" href="images/favi.ico" type="image/x-icon">
+  <!-- styling link -->
+   <link rel="stylesheet" href="purged-css/membership.css">
+   <!-- fontaawesome link for importing social media icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- header -->
+   <header role="banner">
+<img src="images/logo1.ico" alt="our gym logo" width="200px" srcset="images/logo1.ico 400w, images/logo1.ico 800w,images/logo1.ico 1200w" sizes="(max-width: 600px) 400px,
+         (max-width: 900px) 800px,
+         1200px" loading="lazy" >
+<!-- links to ifferent pages of my web page -->
+ <nav>
+  <ul>
+  <li><a href="home.html">Home</a></li>
+ <li> <a href="contact.html">Contact Us</a></li>
+ <li> <a href="membership.html">Membership</a></li>
+   <li> <a href="program.html">Programs</a></li>
+  <li><a href="trainer.html">Meet Trainers</a></li>
+  </ul>
+</nav>   </header>
+  <!-- main -->
+   <main>
+    <h1>Membership Options</h1>
+    <video src="images/7674505-uhd_2160_4096_25fps.mp4" controls></video>
+
+<!-- HTML Web Storage Demo -->
+        <section id="membership-tiers" aria-labelledby="tiers-heading">
+            <h2 id="tiers-heading">Membership Plans</h2>
+            <div class="tiers-container" >
+                <article class="tier-card" data-tier="basic">
+                    <h3>Basic Membership</h3>
+                    <p><strong>$29/month</strong></p>
+                    <ul>
+                        <li>Access to gym equipment</li>
+                        <li>Locker room facilities</li>
+                        <li>Free weights area</li>
+                    </ul>
+                    <button onclick="selectPlan('basic')" aria-describedby="basic-desc">Select Plan</button>
+                    <!-- here the onclick attribute is to be supported by Js -->
+                    <p id="basic-desc" hidden>Basic gym access membership</p>
+                </article>
+
+                <article class="tier-card" data-tier="premium">
+                    <h3>Premium Membership</h3>
+                    <p><strong>$49/month</strong></p>
+                    <ul>
+                        <li>All Basic features</li>
+                        <li>Group classes included</li>
+                        <li>Sauna and steam room</li>
+                    </ul>
+                    <button onclick="selectPlan('premium')">Select Plan</button>
+                <!-- here the onclick attribute is to be supported by Js -->
+                </article>
+            </div>
+        </section>
+<!-- here I was trying to master HTML API which I refered from W3schools html APIs -->
+        <!-- Geolocation API Demo -->
+        <section id="location-based" >
+            <h2>Gyms Near You</h2>
+            <button onclick="findNearbyGyms()">Find Gyms Near Me</button>
+            <!-- here the onclick attribute is to be supported by Js -->
+            <div id="gym-results"></div>
+        </section>
+
+        <!-- Enhanced Membership Form -->
+        <section id="signup-form" aria-labelledby="form-heading">
+            <h2 id="form-heading">Join PowerFit Gym Today</h2>
+            
+            <form id="membership-form" onsubmit="processForm(event)">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div>
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" name="fullname" required
+                               pattern="[A-Za-z ]{2,}" title="Please enter your full name">
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required
+                               aria-required="true">
+                    </div>
+                    
+                    <!-- HTML5 Input Types -->
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" 
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                               placeholder="555-123-4567">
+                    </div>
+                    
+                    <div>
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" min="1920-01-01" max="2010-12-31">
+                    </div>
+
+                    <div>
+                        <label for="weight">Current Weight (kg):</label>
+                        <input type="number" id="weight" name="weight" min="30" max="200" step="0.1">
+                    </div>
+
+                    <div>
+                        <label for="workout-time">Preferred Workout Time:</label>
+                        <input type="time" id="workout-time" name="workout-time">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Membership Selection</legend>
+                    
+                    <label>Choose your plan:</label>
+                    <div role="radiogroup" aria-labelledby="plan-selection">
+                        <input type="radio" id="basic" name="plan" value="basic" required>
+                        <label for="basic">Basic ($29/month)</label>
+                        
+                        <input type="radio" id="premium" name="plan" value="premium">
+                        <label for="premium">Premium ($49/month)</label>
+                    </div>
+<!-- when we are a member of any company we may happen to have different cards like VIP,...-->
+                    <!-- Color picker for member card -->
+                    <div>
+                        <label for="card-color">Member Card Color:</label>
+                        <input type="color" id="card-color" name="card-color" value="#ff0000">
+                    </div>
+                </fieldset>
+
+                <!-- HTML5 Range Input -->
+                <fieldset>
+                    <legend>Fitness Goals</legend>
+                    
+                    <div>
+                        <label for="intensity">Workout Intensity:</label>
+                        <input type="range" id="intensity" name="intensity" 
+                               min="1" max="10" value="5">
+                        <output for="intensity" id="intensity-output">5</output>
+                    </div>
+
+                    <div>
+                        <label for="session-length">Preferred Session Length:</label>
+                        <input type="range" id="session-length" name="session-length"
+                               min="30" max="120" step="15" value="60">
+                        <output for="session-length" id="length-output">60 minutes</output>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Complete Signup</button>
+                <button type="reset">Clear Form</button>
+                
+                <!-- Progress element -->
+                <div id="form-progress" hidden>
+                    <p>Processing your application...</p>
+                    <progress id="form-progress-bar" value="0" max="100"></progress>
+                </div>
+            </form>
+        </section>
+
+        <!-- Web Workers Demo -->
+        <section id="calculator" >
+            <h2>Calorie Calculator</h2>
+            <p>Calculate your daily calorie needs (uses Web Worker):</p>
+            <input type="number" id="weight-input" placeholder="Weight in kg">
+            <button onclick="calculateCalories()">Calculate</button>
+            <div id="calorie-result"></div>
+        </section>
+   </main>
+   <!-- more  gallarys will be added here (to show my web page is scalable)-->
+   
+    <!-- the footer -->
+    <footer role="contentinfo">
+      <nav>
+        <ul>
+       <li> <a href="home.html">home</a></li>
+       <li> <a href="contact.html">contacts</a></li>
+       <li> <a href="program.html">programs</a></li>
+       <li> <a href="membership.html">Membership</a></li>
+        <li><a href="trainer.html">Meet trainers</a></li>
+        </ul>
+      </nav>
+      <br>
+      <h3>Follow Us On</h3>
+      <br>
+     <section class="social-icons">
+    <a id="instagram" href="https://instagram.com" target="_blank"  rel="noopener"><i class="fab fa-instagram"></i>instagram</a>
+    <a id="Telegram" href="https://t.me" target="_blank"  rel="noopener"><i class="fab fa-telegram"></i>Telegram</a>
+    <a id="facebook" href="https://facebook.com" target="_blank"  rel="noopener"><i class="fab fa-facebook"></i>Facebook</a>
+    <a id="twitter" href="https://twitter.com" target="_blank"  rel="noopener"><i class="fab fa-twitter"></i>Twitter</a>
+    <a id="youtube" href="https://youtube.com" target="_blank"  rel="noopener"><i class="fab fa-youtube"></i>youtube</a>
+    <a id="WhatsApp" href="https://wa.me" target="_blank"  rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    <a id="emai" href="mailto:example@email.com"  rel="noopener"><i class="fas fa-envelope"></i>Email</a>
+    <a id="tiktok" href="https://tiktok.com" target="_blank" rel="noopener"><i class="fab fa-tiktok" ></i>tiktok</a>
+  </section>
+
+      <br>
+        <p>&copy; Marta Tegegne Nov 26,2025. All rights reserved.</p>
+        <address>
+            5 kilo Queen Marta Fitness Street, Addis Ababa Cit,Arda Subcity
+        </address>
+        <!-- HTML Symbols -->
+        <p>Contact: 📞 (+251)9-802-174-90  ✉️ martategegne2015@gmail.com</p>
+    </footer>
+
+</body>
+</html>
