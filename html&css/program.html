@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Marta Tegegne Mamo">
+  <!-- project description to enhance SEO -->
+  <meta name="description" content="Transform your body and join the best gym in town. State-of-the-art equipment and expert trainers available.">
+  <title>Program|Queen Marta Fitness</title>
+  <!-- my favicon goes here -->
+  <link rel="icon" href="images/favi.ico" type="image/x-icon">
+  <!-- link to the css file -->
+   <link rel="stylesheet" href="purged-css/program.css">
+   <!-- fontaawesome link for importing social media icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- header -->
+   <header role="banner">
+<img src="images/logo1.ico" alt="our gym logo" width="200px" loading="lazy" >
+<!-- links to different pages of my web page -->
+ <nav>
+  <ul>
+  <li><a href="home.html">Home</a></li>
+ <li> <a href="contact.html">Contact Us</a></li>
+ <li> <a href="membership.html">Membership</a></li>
+   <li> <a href="program.html">Programs</a></li>
+  <li><a href="trainer.html">Meet Trainers</a></li>
+  </ul>
+</nav>
+   </header>
+  <!-- main -->
+   <main>
+<h1>Our Fitness Programs</h1>
+ <!-- Programs table with accessibility -->
+        <section id="programs-overview" aria-labelledby="programs-table-heading">
+            <h2 id="programs-table-heading">Program Comparison</h2>
+            <table role="grid" aria-readonly="true">
+                <caption>Detailed comparison of our fitness programs</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Program</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Focus Areas</th>
+                        <th scope="col">Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Weight Loss</th>
+                        <td>12 weeks</td>
+                        <td>Cardio, Nutrition</td>
+                        <td>
+                            <meter value="3" min="1" max="5">3 out of 5</meter>
+                            Beginner-Intermediate
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Muscle Building</th>
+                        <td>16 weeks</td>
+                        <td>Strength Training</td>
+                        <td>
+                            <meter value="4" min="1" max="5">4 out of 5</meter>
+                            Intermediate-Advanced
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- HTML Div and Classes for layout -->
+        <div class="program-container">
+            <article class="program-card" id="weight-loss-program">
+                <h2>Weight Loss Program</h2>
+                <p>A comprehensive program focusing on:</p>
+                <ul>
+                    <li>High-intensity interval training</li>
+                    <li>Nutrition planning</li>
+                    <li>Progress tracking</li>
+                </ul>
+                <details>
+                    <summary>More about this program</summary>
+                  
+
+                    <p>This program includes personalized meal plans and weekly check-ins.</p>
+                    <!-- HTML Computer Code -->
+                    <pre><code>
+// Sample workout structure
+Warm-up: 10 minutes
+HIIT: 20 minutes
+Cool-down: 10 minutes
+                    </code></pre>
+                </details>
+                  <!-- video 1 -->
+                   <h3>Sample Workout Video:</h3>
+                     <iframe width="300" height="200" 
+                        src="images/4944394-uhd_2160_4096_24fps.mp4" 
+                        title="Sample Workout"
+                        allowfullscreen>
+                </iframe>
+            </article>
+            <article class="program-card" id="muscle-building">
+                <h2>Muscle Building Program</h2>
+                <p>Designed for serious gains:</p>
+                <ol>
+                    <li>Foundation phase (weeks 1-4)</li>
+                    <li>Growth phase (weeks 5-12)</li>
+                    <li>Peak phase (weeks 13-16)</li>
+                </ol>
+                
+                <!-- HTML Iframe for embedded content -->
+                <h3>Sample Workout Video:</h3>
+                <iframe width="300" height="200" 
+                        src="images/7675454-uhd_2160_4096_25fps.mp4" 
+                        title="Sample Workout"
+                        allowfullscreen>
+                </iframe>
+            </article>
+        </div>
+
+        <!-- HTML5 Audio/Video -->
+        <section id="media-demos">
+            <h2>Program Previews</h2>
+            
+            <article>
+                <h3>Yoga Program Audio Guide</h3>
+                <audio controls aria-label="Yoga meditation guide">
+                    <source src="images/Luke Bergs & AgusAlvarez - Take It Slow (freetouse.com) (1).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </article>
+
+ 
+            <article>
+                <h3>HIIT Workout Preview</h3>
+                <video width="320" height="240" controls aria-labelledby="video-desc" autoplay loop>
+                    <source src="images/7674503-uhd_2160_4096_25fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p id="video-desc" hidden>Short preview of our High Intensity Interval Training session</p>
+            </article>
+        </section>
+        <!-- audio collections for work out -->
+        <section>
+            <article>
+    <h3>audio collections for work out </h3>
+ <audio controls src="images/Kvarmez - Soaring (freetouse.com).mp3"> Your browser does not support the audio element.</audio>
+ <audio controls src="images/Luke Bergs & AgusAlvarez - Take It Slow (freetouse.com) (2).mp3"> Your browser does not support the audio element.</audio>
+ <audio controls src="images/Moavii - Breeze (freetouse.com).mp3"> Your browser does not support the audio element.</audio>
+<audio controls src="images/Moavii - The Island Of Haying (freetouse.com).mp3"> Your browser does not support the audio element.</audio>
+</article>
+        </section>
+<!-- here I am trying to master HTML5's native Drag and Drop API -->
+        <!-- HTML Drag and Drop API -->
+        <section id="program-planner" >
+            <h2>Build Your Custom Program</h2>
+            <p>Drag exercises to create your weekly plan:</p>
+            
+            <div >
+                <!-- Available exercises -->
+                <div>
+                    <h3>Available Exercises</h3>
+                    <div draggable="true" class="exercise" id="exercise1">Cardio (30min)</div>
+                    <div draggable="true" class="exercise" id="exercise2">Strength Training</div>
+                    <div draggable="true" class="exercise" id="exercise3">Yoga</div>
+                </div>
+                
+                
+                <!-- Weekly schedule -->
+                <div>
+                    <h3>Your Weekly Plan</h3>
+                    <div id="monday" ondrop="drop(event)" ondragover="allowDrop(event)">Monday</div>
+                    <div id="tuesday" ondrop="drop(event)" ondragover="allowDrop(event)">Tuesday</div>
+                    <div id="wednesday" ondrop="drop(event)" ondragover="allowDrop(event)">Wednesday</div>
+                </div>
+            </div>
+            <!-- this section with id program-planner is to be supported by -->
+             <!-- How It Works (User Experience):
+User drags an exercise from the left section
+
+User drops it onto a day (Monday, Tuesday, Wednesday)
+
+The exercise gets placed into that day's schedule -->
+        </section>
+   </main>
+    <!-- the footer -->
+    <footer role="contentinfo">
+      <nav>
+        <ul>
+       <li> <a href="home.html">home</a></li>
+       <li> <a href="contact.html">contacts</a></li>
+       <li> <a href="program.html">programs</a></li>
+       <li> <a href="membership.html">Membership</a></li>
+        <li><a href="trainer.html">Meet trainers</a></li>
+        </ul>
+      </nav>
+      <br>
+      <h3>Follow Us On</h3>
+      <br>
+      <section class="social-icons">
+    <a id="instagram" href="https://instagram.com" target="_blank"  rel="noopener"><i class="fab fa-instagram"></i>instagram</a>
+    <a id="Telegram" href="https://t.me" target="_blank"  rel="noopener"><i class="fab fa-telegram"></i>Telegram</a>
+    <a id="facebook" href="https://facebook.com" target="_blank"  rel="noopener"><i class="fab fa-facebook"></i>Facebook</a>
+    <a id="twitter" href="https://twitter.com" target="_blank"  rel="noopener"><i class="fab fa-twitter"></i>Twitter</a>
+    <a id="youtube" href="https://youtube.com" target="_blank"  rel="noopener"><i class="fab fa-youtube"></i>youtube</a>
+    <a id="WhatsApp" href="https://wa.me" target="_blank"  rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    <a id="emai" href="mailto:example@email.com"  rel="noopener"><i class="fas fa-envelope"></i>Email</a>
+    <a id="tiktok" href="https://tiktok.com" target="_blank" rel="noopener"><i class="fab fa-tiktok" ></i>tiktok</a>
+  </section>
+
+
+      <br>
+      
+        <p>&copy; Marta Tegegne Nov 26,2025. All rights reserved.</p>
+        <address>
+            5 kilo Queen Marta Fitness Street, Addis Ababa Cit,Arda Subcity
+        </address>
+        <!-- HTML Symbols -->
+        <p>Contact: 📞 (+251)9-802-174-90  ✉️ martategegne2015@gmail.com</p>
+  
+    </footer>
+
+</body>
+</html>
