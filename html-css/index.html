@@ -12,7 +12,14 @@
   <link rel="stylesheet" href="purged-css/home.css">
   <!-- fontaawesome link for importing social media icons -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<!-- connecting Emailjs for verifying email -->
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      // my Emailjs Public Key
+      emailjs.init("xcpcsnFfT2c_xYo9n");
+   })();
+</script>
 </head>
 <body >
   <!-- the header -->
@@ -122,6 +129,18 @@
         <!-- HTML Symbols -->
         <p>Contact: 📞 (+251)9-802-174-90  ✉️ martategegne2015@gmail.com</p>
     </footer>
+<!-- Dark mode toggle button -->
+<button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
 
+<!-- Form feedback area (placed right after the form) -->
+<div id="form-feedback" class="form-message" aria-live="polite"></div>
+
+<!-- Gallery lightbox (modal) -->
+<div id="gallery-modal" class="modal hidden">
+  <span class="modal-close" id="modal-close">&times;</span>
+  <img id="modal-image" src="" alt="Enlarged gym photo">
+</div>
+<!-- the js goes here -->
+ <script src="../plainJs/index.js" defer></script>
 </body>
 </html>
