@@ -1,22 +1,36 @@
-/* CSS Reset, Variables, and Base Styles*/
+/* CSS Reset, Variables, and Base Styles */
 
 :root {
-    /* CSS Variables for Theming */
-    --primary-color: #007bff; /* A vibrant blue for links and buttons */
-    --secondary-color: #ffc107; /* A bright accent color */
-    --background-color: #f4f4f9; /* Light, clean background */
+    /* Light Mode Variables (Default) */
+    --primary-color: #007bff;
+    --secondary-color: #ffc107;
+    --background-color: #f4f4f9;
     --text-color: #333;
-    --header-bg-color: #ffffff;
+    --header-gradient: linear-gradient(to right, #1a365d, #2c5282);
     --card-bg-color: #ffffff;
     --footer-bg-color: #2c3e50;
     --footer-text-color: #ecf0f1;
+    --border-color: #ddd;
+    --form-bg: #eaf0f6;
+    --success-color: #22c55e;
+}
+
+/* DARK MODE OVERRIDES */
+body.dark {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg-color: #1e1e1e;
+    --header-gradient: linear-gradient(to right, #000000, #1a1a1a);
+    --footer-bg-color: #0a0a0a;
+    --border-color: #333;
+    --form-bg: #252525;
 }
 
 /* Universal Reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Crucial for responsive layouts */
+    box-sizing: border-box;
 }
 
 body {
@@ -24,58 +38,45 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header and Navigation (Flexbox for Alignment) */
-
+/* Header and Navigation */
 header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Position Makes the header stick to the top */
+    position: sticky;
+    top: 0;
     z-index: 100;
-    background: linear-gradient(to right, #1a365d, #2c5282);
+    background: var(--header-gradient);
     color: white;
     padding: 1rem 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav {
-    display: flex; /* Layout Flexbox for row alignment */
-    justify-content: space-between; /* Puts space between logo and links */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px;
 }
 
-.main-nav img {
-    height: 50px; /* Adjust logo size */
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex; /* Flexbox for horizontal list items */
-}
-
-.main-nav li {
-    margin-left: 20px;
-}
-
+.main-nav img { height: 50px; }
+.main-nav ul { list-style: none; display: flex; }
+.main-nav li { margin-left: 20px; }
 .main-nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
     padding: 5px 10px;
-    transition: color 0.3s ease; /* CSS Transition: Smooth color change */
-
+    transition: color 0.3s ease;
 }
 
-.main-nav a:hover { /* Hover state */
+.main-nav a:hover {
     color: var(--secondary-color);
     border-bottom: 2px solid var(--secondary-color);
 }
 
-/* Main Layout (Grid for Structure) */
-
+/* Main Layout */
 main {
     max-width: 1200px;
     margin: 20px auto;
@@ -86,83 +87,147 @@ main h1 {
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 30px;
-    /* Text Shadow */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Trainer Profiles (Grid for multi-column layout) */
-
+/* Trainer Profiles */
 #trainer-profiles {
     padding: 30px;
     background-color: var(--card-bg-color);
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
+    border: 1px solid var(--border-color);
 }
 
 #trainer-profiles article {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 8px;
-    transition: transform 0.3s ease; /* Transition for hover effect */
+    transition: transform 0.3s ease;
+    background-color: var(--card-bg-color);
 }
 
-#trainer-profiles article:hover { /* CSS Pseudo-class: Scale up on hover */
-    transform: translateY(-5px); 
-}
+#trainer-profiles article:hover { transform: translateY(-5px); }
 
 #trainer-profiles h2 {
-    color: #4a4a4a;
-    border-bottom: 2px solid #eee;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
-#trainer-profiles figure {
-    float: right; /* CSS Positioning: Floats the image to the right */
-    margin: 0 0 15px 15px;
-}
-
+#trainer-profiles figure { float: right; margin: 0 0 15px 15px; }
 #trainer-profiles img {
-    border-radius: 50%; /* Makes the image circular */
+    border-radius: 50%;
     border: 3px solid var(--secondary-color);
+    width: 200px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
 }
 
-#trainer-profiles ul {
-    list-style-type: '⚡ '; /* CSS Typography: Custom list marker */
-    margin-left: 20px;
-}
+#trainer-profiles ul { list-style-type: '⚡ '; margin-left: 20px; }
 
-img {
-  width: 200px;
-  aspect-ratio: 4/3; 
-  object-fit: cover;    /* ensures image scales nicely */
-}
-
-/* Video Section*/
-
+/* Video Section */
 #trainer-videos {
     text-align: center;
     margin-bottom: 40px;
 }
 
 #trainer-videos video {
-    max-width: 100%; /* Responsive video sizing */
+    max-width: 100%;
     border: 5px solid var(--primary-color);
     border-radius: 10px;
-    /* CSS Filter: Subtle shadow */
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
 }
 
-/*  Form Styles (Advanced Booking)*/
+/* LIVE SESSION & CHAT INTERFACE */
+#live-sessions {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 
+#session-updates {
+    height: 250px;
+    overflow-y: auto;
+    background-color: var(--form-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#user-chat-input {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#live-chat-msg {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#live-chat-msg:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button[onclick="sendUserMessage()"] {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button[onclick="sendUserMessage()"]:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+}
+
+button[onclick="startLiveUpdates()"] {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button[onclick="startLiveUpdates()"]:hover {
+    background-color: #0056b3;
+}
+
+/* Advanced Booking Form Styles */
 #advanced-booking-form {
-    display: grid; /* CSS Layout: Grid for form structure */
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: #eaf0f6;
+    background-color: var(--form-bg);
     border-radius: 8px;
+    color: var(--text-color);
 }
 
 #advanced-booking-form div {
@@ -170,49 +235,27 @@ img {
     flex-direction: column;
 }
 
-#advanced-booking-form label {
-    margin-bottom: 5px;
-    font-weight: 600;
+#advanced-booking-form input {
+    background-color: var(--card-bg-color);
     color: var(--text-color);
-}
-
-#advanced-booking-form input[type="date"],
-#advanced-booking-form input[type="datetime-local"],
-#advanced-booking-form input[type="file"] {
+    border: 1px solid var(--border-color);
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1em;
-}
-
-#advanced-booking-form input[type="color"] {
-    height: 40px;
 }
 
 button[type="submit"] {
     background-color: var(--primary-color);
-    color: black;
+    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    grid-column: 1 / -1; /* Button spans all columns in the grid */
-    margin-top: 10px;
+    transition: all 0.3s ease;
+    grid-column: 1 / -1;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-button:active { /* CSS Pseudo-class: Pressed state */
-    transform: scale(0.98);
-}
-
-/* Footer Styles*/
-
+/* Footer Styles */
 footer {
     background-color: var(--footer-bg-color);
     color: var(--footer-text-color);
@@ -220,123 +263,48 @@ footer {
     text-align: center;
     border-top: 5px solid var(--secondary-color);
 }
+
 footer nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  list-style: none;
-  margin-bottom: 1.5rem;
-}
-footer nav a {
-    color: var(--footer-text-color);
-    text-decoration: none;
-    margin: 0 10px;
-    /* CSS Transition */
-    transition: text-decoration 0.3s ease;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
-footer nav a:hover {
-    text-decoration: underline;
-    color: var(--secondary-color);
-}
+footer nav a { color: var(--footer-text-color); text-decoration: none; }
+footer nav a:hover { color: var(--secondary-color); text-decoration: underline; }
 
-footer address {
-    font-style: normal;
-    margin-top: 10px;
-}
-
-footer p, footer address {
-    margin: 5px 0;
-}
-
-/* social-icons */
 .social-icons {
-  text-align: center;
-  margin: 1.5rem 0;
+    text-align: center;
+    margin: 1.5rem 0;
 }
+
 .social-icons a {
-  display: inline-block;
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
-  color: var(--white);
-  text-decoration: none;
-  transition: var(--transition);
-  padding: 0.5rem;
-  border-radius: var(--radius);
-  background-color: black;
-}
-/* Original hover colors*/
-.social-icons #instagram:hover {
-  background-color: tomato;
-  color: white;
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.8rem;
+    background-color: #000;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.social-icons #Telegram:hover {
-  background-color: rgb(25, 51, 197);
-  color: white;
+.social-icons #instagram:hover { background-color: #e1306c; }
+.social-icons #facebook:hover { background-color: #1877f2; }
+.social-icons #youtube:hover { background-color: #ff0000; }
+.social-icons #WhatsApp:hover { background-color: #25d366; }
+
+/* Animations */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-.social-icons #facebook:hover {
-  background-color: blue;
-  color: white;
-}
-
-.social-icons #twitter:hover {
-  background-color: rgb(19, 19, 228);
-  color: white;
-}
-
-.social-icons #youtube:hover {
-  background-color: red;
-  color: white;
-}
-
-.social-icons #WhatsApp:hover {
-  background-color: green;
-  color: white;
-}
-
-.social-icons #emai:hover {
-  background-color: rgb(226, 51, 51);
-  color: white;
-}
-
-.social-icons #tiktok:hover {
-  background-color: black;
-  color: white;
-}
-
-
-/* Media Queries (Responsive Design) */
-
-@media (max-width: 768px) { /* CSS Media Query: Styles for tablets and smaller screens */
-    .main-nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .main-nav img {
-        margin-bottom: 10px;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .main-nav li {
-        margin: 5px 0;
-    }
-
-    /* Reset float on smaller screens */
-    #trainer-profiles figure {
-        float: none;
-        margin: 0 auto 15px;
-    }
-
-    /* Adjust grid for form on smaller screens */
-    #advanced-booking-form {
-        grid-template-columns: 1fr;
-    }
+/* Media Queries */
+@media (max-width: 768px) {
+    .main-nav, .main-nav ul { flex-direction: column; }
+    .main-nav li { margin: 5px 0; }
+    #trainer-profiles figure { float: none; margin: 0 auto 15px; text-align: center; }
 }

@@ -391,6 +391,123 @@ footer p {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* ────────────────────────────────────────────────
+   Dark mode
+───────────────────────────────────────────────── */
+body.dark {
+  background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
+  color: #e5e7eb;
+}
+
+body.dark main,
+body.dark .feature-card,
+body.dark blockquote,
+body.dark footer {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+body.dark nav a,
+body.dark #cta {
+  color: #dbeafe;
+}
+
+body.dark #hero,
+body.dark #cta {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+body.dark .gallery {
+  background: #111827;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+body.dark #theme-toggle {
+  background: rgba(31,41,55,0.9);
+  color: #fbbf24;
+}
+
+/* Form feedback */
+.form-message {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-message.success {
+  background: #10b981;
+  color: white;
+}
+
+.form-message.error {
+  background: #ef4444;
+  color: white;
+}
+
+/* Lightbox / Modal for gallery */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+.modal:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+#modal-image {
+  max-width: 94%;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  border: 4px solid white;
+}
+
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 3.5rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0 2px 8px black;
+}
+
+.modal-close:hover {
+  color: #f87171;
+}
 /*  RESPONSIVE BREAKPOINTS  */
 @media (min-width: 768px) {
   /* Header becomes horizontal  */

@@ -1,6 +1,6 @@
 /* Mobile-first, responsive, consistent  */
 
-/*  CSS RESET & VARIABLES*/
+/* CSS RESET & VARIABLES*/
 :root {
   --primary-blue: #1e40af;
   --blue-dark: #1e3a8a;
@@ -33,6 +33,7 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: 0 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ===== HEADER (First version structure with home page colors) ===== */
@@ -61,7 +62,7 @@ header img:hover {
   transform: scale(1.05);
 }
 
-/* ===== NAVIGATION (First version structure) ===== */
+/* NAVIGATION (First version structure) */
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -146,6 +147,9 @@ video {
   box-shadow: var(--shadow);
   transition: var(--transition);
   border-top: 4px solid var(--primary-blue);
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .tier-card:hover {
@@ -543,7 +547,7 @@ footer p {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/*  RESPONSIVE BREAKPOINTS  */
+/* RESPONSIVE BREAKPOINTS  */
 @media (min-width: 768px) {
   /* Header becomes horizontal */
   header[role="banner"] {
@@ -614,7 +618,55 @@ footer p {
   }
 }
 
-/*  ACCESSIBILITY  */
+/* DARK MODE OVERRIDES (ADDED FOR LIVE THEME SUPPORT) */
+body.dark {
+  background: #0f172a !important; /* Deep dark blue-black */
+  color: #f8fafc !important;
+}
+
+body.dark header[role="banner"] {
+  background: #1e293b !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+body.dark main, 
+body.dark #calculator, 
+body.dark #gym-results {
+  background: #1e293b !important;
+  color: #f8fafc;
+}
+
+body.dark nav a {
+  background-color: #334155;
+  color: #cbd5e1;
+}
+
+body.dark #membership-tiers {
+  background: #0f172a !important;
+}
+
+body.dark .tier-card {
+  background: #1e293b !important;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+body.dark .tier-card h3,
+body.dark .tier-card li {
+  color: #cbd5e1;
+}
+
+body.dark #calorie-result {
+  background: #334155;
+}
+
+/* Animation for result display */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ACCESSIBILITY  */
 a:focus,
 button:focus,
 input:focus {
