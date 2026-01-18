@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- 1. Dark Mode Persistence ---
+  // Dark Mode Persistence 
   const toggle = document.getElementById('theme-toggle');
   const body = document.body;
   const savedTheme = localStorage.getItem('theme');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 2. Free Trial Form (Local Storage with Success/Failure Popups) ---
+  //Free Trial Form (Local Storage with Success/Failure Popups) 
   const form = document.getElementById('trial-form');
   const emailField = document.getElementById('email');
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 3. Gallery Lightbox ---
+  // Gallery Lightbox 
   const images = document.querySelectorAll('.gallery img');
   const modal = document.getElementById('gallery-modal');
   const modalImg = document.getElementById('modal-image');
